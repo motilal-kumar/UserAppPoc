@@ -15,8 +15,12 @@ public class UserServiceImpl implements IUserService{
     private UserMasterRepository userMasterRepository;
 
     @Override
-    public UserMaster saveUserData(UserMaster user) {
-        return userMasterRepository.save(user);
+    public UserMaster saveUserData(UserMaster userMaster) {
+
+        userMaster.setFirstName(userMaster.getFirstName());
+
+
+        return userMasterRepository.save(userMaster);
     }
 
     @Override
